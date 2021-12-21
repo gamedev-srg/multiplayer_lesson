@@ -12,4 +12,6 @@ We added the following options in regards to the tasks:
 * Score for hitting players with the laser - We added the following files [PlayerScore.cs](https://github.com/gamedev-srg/multiplayer_lesson/blob/master/Assets/scripts/Player/PlayerScore.cs)
 
 check out our ITCH.IO page - https://g-r-s.itch.io/mulitipulti
+
+
 In addition, we also modified the [PlayerManager.cs](https://github.com/gamedev-srg/multiplayer_lesson/blob/master/Assets/scripts/Player/PlayerManager.cs) file, in order to use the Score adder, and the Shield.

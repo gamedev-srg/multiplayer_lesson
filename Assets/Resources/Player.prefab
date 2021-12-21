@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 2557017311148351012}
   - component: {fileID: -2254791364717599843}
   - component: {fileID: 5338445304989142174}
+  - component: {fileID: 690997391816266339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -266,6 +267,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2557017311148351018}
   - {fileID: 2557017311148351012}
+  - {fileID: 7151623748898895248}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -282,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
+  shield: {fileID: 0}
   playerUiPrefab: {fileID: 1445000400809041852, guid: 29e06fb6c2b82d14098e6629ef1e5cbf, type: 3}
   beams: {fileID: 7439903803677311857}
   triggeringTag: Beam
@@ -311,6 +314,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1015362da1843564eb3af3b336a10b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &690997391816266339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2557017311148351010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed6fd93f5fc32a419320a8f47f920b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldActive: 0
 --- !u!1 &7439903802429612132
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,14 +722,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea6519343dde014b8101094ec2ab3e4, type: 3}
---- !u!4 &7150358211741331163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dea6519343dde014b8101094ec2ab3e4, type: 3}
-  m_PrefabInstance: {fileID: 7255744944891939120}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7525792347684336737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dea6519343dde014b8101094ec2ab3e4, type: 3}
+  m_PrefabInstance: {fileID: 7255744944891939120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7150358211741331163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dea6519343dde014b8101094ec2ab3e4, type: 3}
   m_PrefabInstance: {fileID: 7255744944891939120}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &9084191591404741019
@@ -735,6 +751,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7151623748898895248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7525792347684336737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: Blend
+  - Type: 1
+    SynchronizeType: 1
+    Name: speed
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1001 &8976392805497684643
 PrefabInstance:
   m_ObjectHideFlags: 0

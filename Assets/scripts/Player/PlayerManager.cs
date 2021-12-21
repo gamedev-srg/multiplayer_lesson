@@ -29,6 +29,7 @@ namespace Com.MyCompany.MyGame
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
+        public PlayerShield shield;
 
         #endregion
 
@@ -68,6 +69,7 @@ namespace Com.MyCompany.MyGame
             if (photonView.IsMine)
             {
                 LocalPlayerInstance = gameObject;
+                shield = GetComponent<PlayerShield>();
             }
 
             // #Critical
@@ -118,7 +120,7 @@ namespace Com.MyCompany.MyGame
             }
         }
 
-        /// <summary>
+        /// <summary>  
         /// MonoBehaviour method called when the Collider 'other' enters the trigger.
         /// Affect Health of the Player if the collider is a beam
         /// Note: when jumping and firing at the same, you'll find that the player's own beam intersects with itself
@@ -126,9 +128,13 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         public void OnTriggerEnter(Collider other)
         {
-            if (other.tag == triggeringTag && photonView.IsMine)
+            if (other.tag == triggeringTag && photonView.IsMine && !shield.shieldActive)
             {
                 this.Health -= 0.1f;
+            }
+            else if (other.tag != "Shield")
+            {
+                PlayerScore.instance.addPoints();
             }
         }
 
@@ -139,10 +145,14 @@ namespace Com.MyCompany.MyGame
         /// <param name="other">Other.</param>
         public void OnTriggerStay(Collider other)
         {
-            if (other.tag == triggeringTag && photonView.IsMine)
+            if (other.tag == triggeringTag && photonView.IsMine && !shield.shieldActive)
             {
                 // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
                 this.Health -= 0.1f * Time.deltaTime;
+            }
+            else if(other.tag != "Shield")
+            {
+                PlayerScore.instance.addPoints();
             }
         }
 
@@ -183,6 +193,7 @@ namespace Com.MyCompany.MyGame
                 // We own this player: send the others our data
                 stream.SendNext(this.IsFiring);
                 stream.SendNext(this.Health);
+                
             }
             else
             {

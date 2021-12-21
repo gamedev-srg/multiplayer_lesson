@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Beam
   - Cube
+  - Shield
   layers:
   - Default
   - TransparentFX

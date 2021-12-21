@@ -129,6 +129,7 @@ namespace Com.MyCompany.MyGame
             if (other.tag == triggeringTag && photonView.IsMine)
             {
                 this.Health -= 0.1f;
+                Debug.Log("Log1");
             }
         }
 
@@ -143,6 +144,8 @@ namespace Com.MyCompany.MyGame
             {
                 // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
                 this.Health -= 0.1f * Time.deltaTime;
+                PlayerScore.instance.addPoints();
+                /*ScoreManager.instance.addPoints();*/
             }
         }
 

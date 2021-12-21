@@ -287,7 +287,6 @@ GameObject:
   - component: {fileID: 903477003}
   - component: {fileID: 903477002}
   - component: {fileID: 903477001}
-  - component: {fileID: 903477004}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -356,19 +355,6 @@ RectTransform:
   m_AnchoredPosition: {x: 101, y: -25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &903477004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903477000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c015739b9f2208542aa2f272a2be4646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 903477001}
 --- !u!1 &973520741
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +573,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1102535717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afc127996776aa44c87e75400ce62306, type: 3}
+  m_Script: {fileID: 11500000, guid: c015739b9f2208542aa2f272a2be4646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 903477001}

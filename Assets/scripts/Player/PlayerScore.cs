@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Com.MyCompany.MyGame
     {
         public static PlayerScore instance;
         public Text scoreText;
-        float score = 1.0f;
+        float score = 0.0f;
 
         private void Awake()
         {
@@ -23,7 +24,9 @@ namespace Com.MyCompany.MyGame
 
         public void addPoints()
         {
-            score *= (1 + Time.deltaTime);
+            score++;
+            /*score = (float) Math.Round(score, 2);*/
+            scoreText.text = score.ToString() + " Points";
         }
 
         // Update is called once per frame

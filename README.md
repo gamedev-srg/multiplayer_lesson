@@ -1,5 +1,10 @@
 # multiplayer-tutorial-unity
 
+A multiplayer game in Unity using Photon, in which you need to shoot the other robots and kill them before they kill you!
+
+### Controls:
+WASD to move, mouse to look around, CTRL or left-click to shoot.
+
 We added the following options in regards to the tasks:
 
 * Shield for the player - [ShieldSpawner.cs](https://github.com/gamedev-srg/multiplayer_lesson/blob/master/Assets/ShieldSpawner.cs), [ShieldPlayer.cs](https://github.com/gamedev-srg/multiplayer_lesson/blob/master/Assets/scripts/ShieldPlayer.cs), [PlayerShield.cs](https://github.com/gamedev-srg/multiplayer_lesson/blob/master/Assets/scripts/Player/PlayerShield.cs) 
